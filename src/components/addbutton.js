@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-// import './addbutton.scss';
 
 import React from 'react';
 import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
