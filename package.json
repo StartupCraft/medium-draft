@@ -1,6 +1,6 @@
 {
-  "name": "medium-draft",
-  "version": "0.5.6",
+  "name": "guided-editor",
+  "version": "0.0.2",
   "description": "A medium like rich text editor built upon draft-js with an emphasis on eliminating mouse usage by adding relevant keyboard shortcuts",
   "main": "lib/index.js",
   "repository": "https://github.com/brijeshb42/medium-draft",
@@ -35,9 +35,9 @@
     "react-transition-group": "^1.1.2"
   },
   "peerDependencies": {
+    "draft-convert": "^2.0.0",
     "react": "^15.0.0",
-    "react-dom": "^15.0.0",
-    "draft-convert": "^2.0.0"
+    "react-dom": "^15.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.10.1",
