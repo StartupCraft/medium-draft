@@ -107,7 +107,8 @@ export const addNewBlockAt = (
     editorState,
     pivotBlockKey,
     newBlockType = Block.UNSTYLED,
-    initialData = {}
+    initialData = {},
+    newKey = null,
   ) => {
   const content = editorState.getCurrentContent();
   const blockMap = content.getBlockMap();
@@ -117,7 +118,7 @@ export const addNewBlockAt = (
   }
   const blocksBefore = blockMap.toSeq().takeUntil((v) => (v === block));
   const blocksAfter = blockMap.toSeq().skipUntil((v) => (v === block)).rest();
-  const newBlockKey = genKey();
+  const newBlockKey = newKey || genKey();
 
   const newBlock = new ContentBlock({
     key: newBlockKey,

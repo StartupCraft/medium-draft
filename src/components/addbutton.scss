@@ -20,7 +20,6 @@ $add-btn-width: 39px;
   font-weight: bold;
   font-size: 20px;
   text-align: center;
-  transition: all 0.2s ease;
   margin-left: 10px;
   margin-top: -5px;
 
@@ -44,15 +43,21 @@ $add-btn-width: 39px;
     background-color: white;
   }
 
-  svg path {
-    stroke: #545454;
+  svg {
+    transition: all 0.2s ease;
+
+    path {
+      stroke: #545454;
+    }
   }
 }
 
 .md-add-button {
 
   &.md-open-button {
-    transform: rotate(45deg);
+    svg {
+      transform: rotate(45deg);
+    }
   }
 }
 

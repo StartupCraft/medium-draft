@@ -7,6 +7,9 @@ const customStyleMap = {
   [Inline.HIGHLIGHT]: {
     backgroundColor: 'yellow',
   },
+  [Inline.REMINDER]: {
+    backgroundColor: 'red',
+  },
   [Inline.CODE]: {
     fontFamily: 'Consolas, "Liberation Mono", Menlo, Courier, monospace',
     margin: '4px 0',

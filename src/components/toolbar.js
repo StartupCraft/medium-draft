@@ -9,7 +9,7 @@ import InlineToolbar from './inlinetoolbar';
 
 import { getSelection, getSelectionRect } from '../util/index';
 import { getCurrentBlock } from '../model/index';
-import { Entity, HYPERLINK } from '../util/constants';
+import { Inline, Entity, HYPERLINK } from '../util/constants';
 
 export default class Toolbar extends React.Component {
 
@@ -287,7 +287,7 @@ export const BLOCK_BUTTONS = [
     label: (
       <svg width="10.83" height="10" viewBox="0 0 13 12">
         <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
-          <g transform="translate(-357.000000, -255.000000)" fill="#FFFFFF">
+          <g transform="translate(-357.000000, -255.000000)" fill="#5c68e0">
             <g transform="translate(260.000000, 165.000000)">
               <g transform="translate(0.000000, 75.000000)">
                 <g transform="translate(19.000000, 0.000000)">
@@ -325,32 +325,32 @@ export const BLOCK_BUTTONS = [
 export const INLINE_BUTTONS = [
   {
     label: 'B',
-    style: 'BOLD',
+    style: Inline.BOLD,
     icon: 'bold',
     description: 'Bold',
   },
   {
     label: 'I',
-    style: 'ITALIC',
+    style: Inline.ITALIC,
     icon: 'italic',
     description: 'Italic',
   },
   {
     label: 'U',
-    style: 'UNDERLINE',
+    style: Inline.UNDERLINE,
     icon: 'underline',
     description: 'Underline',
   },
   {
     label: 'Hi',
-    style: 'HIGHLIGHT',
+    style: Inline.HIGHLIGHT,
     description: 'Highlight selection',
   },
   {
     label: (
       <svg width="20" height="15" viewBox="0 0 14 14">
         <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
-          <g transform="translate(-468.000000, -254.000000)" stroke="#FFFFFF">
+          <g transform="translate(-468.000000, -254.000000)" stroke="#5c68e0">
             <g transform="translate(260.000000, 165.000000)">
               <g transform="translate(0.000000, 75.000000)">
                 <g transform="translate(19.000000, 0.000000)">
@@ -368,6 +368,16 @@ export const INLINE_BUTTONS = [
     style: HYPERLINK,
     icon: 'link',
     description: 'Add a link',
+  },
+  {
+    label: (
+      <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg">
+        <path d="M11 2.95L8.7 1l-.65.75 2.3 1.95.65-.75zM3.95 1.8l-.65-.75L1 2.95l.65.75 2.3-1.9zm2.3 2.3H5.5v3l2.35 1.45.4-.6-2-1.2V4.1zM6 2.1c-2.5 0-4.5 2-4.5 4.5s2 4.5 4.5 4.5 4.5-2 4.5-4.5-2-4.5-4.5-4.5zm0 8c-1.95 0-3.5-1.55-3.5-3.5S4.05 3.1 6 3.1s3.5 1.55 3.5 3.5-1.55 3.5-3.5 3.5z" />
+      </svg>
+    ),
+    style: Inline.REMINDER,
+    icon: 'reminder',
+    description: 'Add a reminder',
   },
 ];
 

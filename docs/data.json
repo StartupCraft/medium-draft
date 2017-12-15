@@ -31,6 +31,25 @@
   },
   "blocks": [
     {
+      "text": "Text with reminder",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [
+        {
+          "offset": 4,
+          "length": 6,
+          "style": "REMINDER"
+        }
+      ],
+      "entityRanges": [],
+      "data": {
+        "activity": {
+          "kind": "goal",
+          "reminderText": "with"
+        }
+      }
+    },
+    {
       "key": "2vr7c",
       "text": "medium-draft",
       "type": "header-three",

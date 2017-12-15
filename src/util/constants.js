@@ -32,13 +32,16 @@ export const Inline = {
   STRIKETHROUGH: 'STRIKETHROUGH',
   UNDERLINE: 'UNDERLINE',
   HIGHLIGHT: 'HIGHLIGHT',
+  REMINDER: 'REMINDER',
 };
 
 export const Entity = {
   LINK: 'LINK',
+  REMINDER: 'REMINDER',
 };
 
 export const HYPERLINK = 'hyperlink';
+
 export const HANDLED = 'handled';
 export const NOT_HANDLED = 'not_handled';
 

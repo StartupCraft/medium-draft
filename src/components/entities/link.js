@@ -3,7 +3,6 @@ import React from 'react';
 
 import { Entity } from '../../util/constants';
 
-
 export const findLinkEntities = (contentBlock, callback, contentState) => {
   contentBlock.findEntityRanges(
     (character) => {

@@ -11,6 +11,8 @@ export const htmlToStyle = (nodeName, node, currentStyle) => {
       return currentStyle.add(Inline.STRIKETHROUGH);
     case 'u':
       return currentStyle.add(Inline.UNDERLINE);
+    case 'mark':
+      return currentStyle.add(Inline.REMINDER);
     case 'span':
       if (node.className === `md-inline-${Inline.HIGHLIGHT.toLowerCase()}`) {
         return currentStyle.add(Inline.HIGHLIGHT);
