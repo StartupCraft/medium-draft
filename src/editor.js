@@ -42,7 +42,7 @@ import ImageButton from './components/sides/image';
 
 /*
 A wrapper over `draft-js`'s default **Editor** component which provides
-some built-in customisations like custom blocks (todo, caption, etc) and
+some built-in customisations like custom blocks (todo, etc) and
 some key handling for ease of use so that users' mouse usage is minimum.
 */
 class MediumDraftEditor extends React.Component {
@@ -109,7 +109,6 @@ class MediumDraftEditor extends React.Component {
     placeholder: 'Write your story...',
     continuousBlocks: [
       Block.UNSTYLED,
-      Block.BLOCKQUOTE,
       Block.OL,
       Block.UL,
       Block.CODE,
@@ -230,7 +229,7 @@ class MediumDraftEditor extends React.Component {
   /**
    * Override which text modifications are available according BLOCK_BUTTONS style property.
    * Defaults all of them if no toolbarConfig.block passed:
-   *   block: ['ordered-list-item', 'unordered-list-item', 'blockquote', 'header-three', 'todo'],
+   *   block: ['ordered-list-item', 'unordered-list-item', 'header-three', 'todo'],
    * Example parameter: toolbarConfig = {
    *   block: ['ordered-list-item', 'unordered-list-item'],
    *   inline: ['BOLD', 'ITALIC', 'UNDERLINE', 'hyperlink'],
@@ -303,11 +302,6 @@ class MediumDraftEditor extends React.Component {
         return HANDLED;
       }
     }
-    /* else if (command === KEY_COMMANDS.addNewBlock()) {
-      const { editorState } = this.props;
-      this.onChange(addNewBlock(editorState, Block.BLOCKQUOTE));
-      return HANDLED;
-    } */
     const block = getCurrentBlock(editorState);
     const currentBlockType = block.getType();
     // if (command === KEY_COMMANDS.deleteBlock()) {
@@ -318,15 +312,10 @@ class MediumDraftEditor extends React.Component {
     //   return NOT_HANDLED;
     // }
     if (command.indexOf(`${KEY_COMMANDS.changeType()}`) === 0) {
-      let newBlockType = command.split(':')[1];
+      const newBlockType = command.split(':')[1];
       // const currentBlockType = block.getType();
       if (currentBlockType === Block.ATOMIC) {
         return HANDLED;
-      }
-      if (currentBlockType === Block.BLOCKQUOTE && newBlockType === Block.CAPTION) {
-        newBlockType = Block.BLOCKQUOTE_CAPTION;
-      } else if (currentBlockType === Block.BLOCKQUOTE_CAPTION && newBlockType === Block.CAPTION) {
-        newBlockType = Block.BLOCKQUOTE;
       }
       this.onChange(RichUtils.toggleBlockType(editorState, newBlockType));
       return HANDLED;
@@ -383,9 +372,6 @@ class MediumDraftEditor extends React.Component {
         switch (blockType) {
           case Block.UL:
           case Block.OL:
-          case Block.BLOCKQUOTE:
-          case Block.BLOCKQUOTE_CAPTION:
-          case Block.CAPTION:
           case Block.TODO:
             this.onChange(resetBlockWithType(editorState, Block.UNSTYLED));
             return HANDLED;
@@ -515,8 +501,8 @@ class MediumDraftEditor extends React.Component {
   };
 
   /**
-   * Handle pasting when cursor is in an image block. Paste the text as the
-   * caption. Otherwise, let Draft do its thing.
+   * Handle pasting when cursor is in an image block.
+   * Otherwise, let Draft do its thing.
    */
   handlePastedText = (text, html, es) => {
     const currentBlock = getCurrentBlock(this.props.editorState);

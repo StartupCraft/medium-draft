@@ -9,8 +9,6 @@ this dictionary, that particular block's type will be changed to the value
 associated with that key.
 */
 export const StringToTypeMap = {
-  '--': `${Block.BLOCKQUOTE}:${Block.BLOCKQUOTE_CAPTION}:${Block.CAPTION}`,
-  '> ': Block.BLOCKQUOTE,
   '*.': Block.UL,
   '* ': Block.UL,
   '- ': Block.UL,

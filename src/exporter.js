@@ -25,21 +25,6 @@ export const styleToHTML = (style) => {
 export const blockToHTML = (block) => {
   const blockType = block.type;
   switch (blockType) {
-    case Block.BLOCKQUOTE_CAPTION:
-    case Block.CAPTION:
-      return {
-        start: `<p class="md-block-${blockType.toLowerCase()}"><caption>`,
-        end: '</caption></p>',
-      };
-    case Block.IMAGE: {
-      const imgData = block.data;
-      const text = block.text;
-      const extraClass = (text.length > 0 ? ' md-block-image-has-caption' : '');
-      return {
-        start: `<figure class="md-block-image${extraClass}"><img src="${imgData.src}" alt="${block.text}" /><figcaption className="md-block-image-caption">`,
-        end: '</figcaption></figure>',
-      };
-    }
     case Block.ATOMIC:
       return {
         start: `<figure className="md-block-${blockType.toLowerCase()}">`,
@@ -63,8 +48,6 @@ export const blockToHTML = (block) => {
     }
     case Block.BREAK:
       return <hr className={`md-block-${blockType.toLowerCase()}`} />;
-    case Block.BLOCKQUOTE:
-      return <blockquote className={`md-block-${blockType.toLowerCase()}`} />;
     case Block.OL:
       return {
         element: <li />,

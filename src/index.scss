@@ -13,11 +13,6 @@
   margin-top: 10px;
   position: relative;
   margin: 0 auto;
-
-  h3 {
-    font-size: 1.3em;
-    margin: 1.2em 0;
-  }
 }
 
 .md-RichEditor-editor .public-DraftEditorPlaceholder-root,
@@ -32,22 +27,6 @@
 
 .md-RichEditor-hidePlaceholder .public-DraftEditorPlaceholder-root {
   display: none;
-}
-
-.md-RichEditor-editor .md-RichEditor-blockquote {
-  border-left: 5px solid #4CA8DE;
-  color: #555;
-  //font-family: 'Hoefler Text', 'Georgia', serif;
-  font-size: 1.2em;
-  margin: 0;
-  padding: 10px 0 10px 20px;
-  background-color: #E2F2FF;
-}
-
-.md-RichEditor-blockquote {
-  a {
-    text-decoration: underline;
-  }
 }
 
 .public-DraftEditor-content {

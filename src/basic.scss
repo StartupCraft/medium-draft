@@ -26,25 +26,11 @@
     margin-bottom: 5px;
 }
 
-.md-block-blockquote {
-    margin: 0;
-    padding-left: 15px;
-    border-left: 5px solid #4CA8DE;
-    padding: 10px 0 10px 20px;
-    background-color: #E2F2FF;
-    font-size: 1.1em;
-}
-
 .md-block-image {
     margin: 0 0 10px 0;
 
     img {
         width: 100%;
-    }
-
-    figcaption {
-        text-align: center;
-        font-size: 0.9em;
     }
 }
 
@@ -109,24 +95,4 @@
     background: yellow;
     display: inline;
     padding: 2px 4px;
-}
-
-p {
-    &.md-block-block-quote-caption {
-
-        &::before {
-            content: '\2013';
-            color: #999;
-            float: left;
-            font-weight: bold;
-            display: inline;
-            margin-right: 10px;
-        }
-        margin-top: 0;
-        font-size: 0.8em;
-        padding-top: 5px;
-        padding-bottom: 5px;
-        padding-left: 10px;
-        background: #fafafa;
-    }
 }

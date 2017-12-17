@@ -20,8 +20,6 @@ import './components/addbutton.scss';
 import './components/toolbar.scss';
 import './components/blocks/text.scss';
 import './components/blocks/atomic.scss';
-import './components/blocks/blockquotecaption.scss';
-import './components/blocks/caption.scss';
 import './components/blocks/todo.scss';
 import './components/blocks/image.scss';
 

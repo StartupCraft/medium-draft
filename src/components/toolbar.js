@@ -279,32 +279,6 @@ export default class Toolbar extends React.Component {
 
 export const BLOCK_BUTTONS = [
   {
-    label: 'H3',
-    style: 'header-three',
-    icon: 'header',
-    description: 'Heading 3',
-  },
-  {
-    label: (
-      <svg width="10.83" height="10" viewBox="0 0 13 12">
-        <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
-          <g transform="translate(-357.000000, -255.000000)" fill="#5c68e0">
-            <g transform="translate(260.000000, 165.000000)">
-              <g transform="translate(0.000000, 75.000000)">
-                <g transform="translate(19.000000, 0.000000)">
-                  <path d="M90.500768,15 L91,15.56 C88.9631235,17.0533408 87.9447005,18.666658 87.9447005,20.4 C87.9447005,21.8800074 88.75012,23.1466614 90.3609831,24.2 L87.5453149,27 C85.9211388,25.7866606 85.109063,24.346675 85.109063,22.68 C85.109063,20.3199882 86.90628,17.7600138 90.500768,15 Z M83.3917051,15 L83.890937,15.56 C81.8540605,17.0533408 80.8356375,18.666658 80.8356375,20.4 C80.8356375,21.8800074 81.6344006,23.1466614 83.2319508,24.2 L80.4362519,27 C78.8120759,25.7866606 78,24.346675 78,22.68 C78,20.3199882 79.7972171,17.7600138 83.3917051,15 Z" />
-                </g>
-              </g>
-            </g>
-          </g>
-        </g>
-      </svg>
-    ),
-    style: 'blockquote',
-    icon: 'quote-right',
-    description: 'Blockquote',
-  },
-  {
     label: 'UL',
     style: 'unordered-list-item',
     icon: 'list-ul',

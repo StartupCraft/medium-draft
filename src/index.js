@@ -8,8 +8,6 @@ import rendererFn from './components/customrenderer';
 import customStyleMap from './util/customstylemap';
 import createEditorState from './model/content';
 
-import QuoteCaptionBlock from './components/blocks/blockquotecaption';
-import CaptionBlock from './components/blocks/caption';
 import AtomicBlock from './components/blocks/atomic';
 import TodoBlock from './components/blocks/todo';
 import ImageBlock from './components/blocks/image';
@@ -47,8 +45,6 @@ export {
   customStyleMap,
   keyBindingFn,
   rendererFn,
-  QuoteCaptionBlock,
-  CaptionBlock,
   AtomicBlock,
   TodoBlock,
   ImageBlock,

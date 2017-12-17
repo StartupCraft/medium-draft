@@ -35,14 +35,7 @@ export const htmlToEntity = (nodeName, node, createEntity) => {
 };
 
 export const htmlToBlock = (nodeName, node) => {
-  if (nodeName === 'p' && (
-             node.className === `md-block-${Block.CAPTION.toLowerCase()}` ||
-             node.className === `md-block-${Block.BLOCKQUOTE_CAPTION.toLowerCase()}`)) {
-    return {
-      type: Block.BLOCKQUOTE_CAPTION,
-      data: {},
-    };
-  } else if (nodeName === 'figure') {
+  if (nodeName === 'figure') {
     if (node.className.match(/^md-block-image/)) {
       const imageNode = node.querySelector('img');
       return {
@@ -69,11 +62,6 @@ export const htmlToBlock = (nodeName, node) => {
   } else if (nodeName === 'hr') {
     return {
       type: Block.BREAK,
-      data: {},
-    };
-  } else if (nodeName === 'blockquote') {
-    return {
-      type: Block.BLOCKQUOTE,
       data: {},
     };
   } else if (nodeName === 'p') {
