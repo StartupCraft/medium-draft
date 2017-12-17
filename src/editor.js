@@ -38,8 +38,6 @@ import {
   updateBlock,
 } from './model';
 
-import ImageButton from './components/sides/image';
-
 /*
 A wrapper over `draft-js`'s default **Editor** component which provides
 some built-in customisations like custom blocks (todo, etc) and
@@ -114,12 +112,7 @@ class MediumDraftEditor extends React.Component {
       Block.CODE,
       Block.TODO,
     ],
-    sideButtons: [
-      {
-        title: 'Image',
-        component: ImageButton,
-      },
-    ],
+    sideButtons: [],
     disableToolbar: false,
     showLinkEditToolbar: true,
     toolbarConfig: {},
@@ -506,7 +499,7 @@ class MediumDraftEditor extends React.Component {
    */
   handlePastedText = (text, html, es) => {
     const currentBlock = getCurrentBlock(this.props.editorState);
-    if (currentBlock.getType() === Block.IMAGE) {
+    if (currentBlock.getType() === Block.ACTIVITY) {
       const { editorState } = this.props;
       const content = editorState.getCurrentContent();
       this.onChange(

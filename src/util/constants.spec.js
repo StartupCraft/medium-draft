@@ -5,7 +5,7 @@ describe('constants', () => {
     expect(KEY_COMMANDS.changeType()).to.equal('changetype:');
     expect(KEY_COMMANDS.changeType('')).to.equal('changetype:');
     expect(KEY_COMMANDS.changeType(Block.ATOMIC)).to.equal(`changetype:${Block.ATOMIC}`);
-    expect(KEY_COMMANDS.changeType(Block.IMAGE)).to.equal(`changetype:${Block.IMAGE}`);
+    expect(KEY_COMMANDS.changeType(Block.ACTIVITY)).to.equal(`changetype:${Block.ACTIVITY}`);
   });
 
   it('toggleInline should return appended with inline type', () => {

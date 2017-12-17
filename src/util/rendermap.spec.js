@@ -8,9 +8,9 @@ describe('rendermap', () => {
     });
   });
 
-  it('returns figure for IMAGE', () => {
-    expect(renderMap.get(Block.IMAGE)).to.deep.equal({
-      element: 'figure',
+  it('returns div for ACTIVITY', () => {
+    expect(renderMap.get(Block.ACTIVITY)).to.deep.equal({
+      element: 'div',
     });
   });
 });

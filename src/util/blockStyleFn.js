@@ -20,8 +20,8 @@ export default (block) => {
       finalClass += `${BASE_BLOCK_CLASS}-todo ${checkedClass}`;
       return finalClass;
     }
-    case Block.IMAGE:
-      return `${BASE_BLOCK_CLASS} ${BASE_BLOCK_CLASS}-image`;
+    case Block.ACTIVITY:
+      return `${BASE_BLOCK_CLASS} ${BASE_BLOCK_CLASS}-activity`;
     default: return BASE_BLOCK_CLASS;
   }
 };

@@ -10,10 +10,8 @@ import createEditorState from './model/content';
 
 import AtomicBlock from './components/blocks/atomic';
 import TodoBlock from './components/blocks/todo';
-import ImageBlock from './components/blocks/image';
 import BreakBlock from './components/blocks/break';
 
-import ImageSideButton from './components/sides/image';
 import BreakSideButton from './components/sides/break';
 
 export { Block, Inline, Entity, HANDLED, NOT_HANDLED } from './util/constants';
@@ -47,9 +45,7 @@ export {
   rendererFn,
   AtomicBlock,
   TodoBlock,
-  ImageBlock,
   BreakBlock,
-  ImageSideButton,
   BreakSideButton,
 };
 

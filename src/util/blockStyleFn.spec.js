@@ -28,12 +28,12 @@ describe('blockStyleFn()', () => {
       `${BASE_BLOCK_CLASS} ${BASE_BLOCK_CLASS}-atomic`);
   });
 
-  it('should return block class for IMAGE', () => {
+  it('should return block class for ACTIVITY', () => {
     const normalBlock = new ContentBlock({
-      type: Block.IMAGE,
+      type: Block.ACTIVITY,
     });
     expect(blockStyleFn(normalBlock)).to.equal(
-      `${BASE_BLOCK_CLASS} ${BASE_BLOCK_CLASS}-image`);
+      `${BASE_BLOCK_CLASS} ${BASE_BLOCK_CLASS}-activity`);
   });
 
   it('should return block class for TODO', () => {

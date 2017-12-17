@@ -21,7 +21,6 @@ import './components/toolbar.scss';
 import './components/blocks/text.scss';
 import './components/blocks/atomic.scss';
 import './components/blocks/todo.scss';
-import './components/blocks/image.scss';
 
 import {
   Editor,
@@ -32,7 +31,6 @@ import {
   addNewBlockAt,
   beforeInput,
   getCurrentBlock,
-  ImageSideButton,
   rendererFn,
   HANDLED,
   NOT_HANDLED
@@ -311,9 +309,6 @@ class App extends React.Component {
     };
 
     this.sideButtons = [{
-      title: 'Image',
-      component: ImageSideButton,
-    }, {
       title: 'Embed',
       component: EmbedSideButton,
     }, {
@@ -470,7 +465,7 @@ class App extends React.Component {
   }
 
   handleDroppedFiles(selection, files) {
-    window.ga('send', 'event', 'draftjs', 'filesdropped', files.length + ' files');
+    /* window.ga('send', 'event', 'draftjs', 'filesdropped', files.length + ' files');
     const file = files[0];
     if (file.type.indexOf('image/') === 0) {
       // eslint-disable-next-line no-undef
@@ -484,7 +479,8 @@ class App extends React.Component {
       ));
       return HANDLED;
     }
-    return NOT_HANDLED
+    return NOT_HANDLED */
+    return HANDLED;
   }
 
   handleReturn(e) {

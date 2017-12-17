@@ -19,7 +19,7 @@ describe('model/index', () => {
     });
 
     it('returns passed data for any other block', () => {
-      expect(getDefaultBlockData(Block.IMAGE, {
+      expect(getDefaultBlockData(Block.ACTIVITY, {
         src: 'https://www.google.com',
         alt: 'Google',
       })).to.deep.equal({

@@ -11,7 +11,6 @@ export const Block = {
   CODE: 'code-block',
   ATOMIC: 'atomic',
   TODO: 'todo',
-  IMAGE: 'atomic:image',
   BREAK: 'atomic:break',
   ACTIVITY: 'atomic:activity',
 };

@@ -25,7 +25,7 @@ describe('beforeInput()', () => {
     };
     let es = createEditorState(dummyData);
     expect(beforeInput(es)).to.equal(NOT_HANDLED);
-    dummyData.blocks[0].type = Block.IMAGE;
+    dummyData.blocks[0].type = Block.ACTIVITY;
     es = createEditorState(dummyData);
     expect(beforeInput(es)).to.equal(NOT_HANDLED);
   });

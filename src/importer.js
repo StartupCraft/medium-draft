@@ -36,15 +36,7 @@ export const htmlToEntity = (nodeName, node, createEntity) => {
 
 export const htmlToBlock = (nodeName, node) => {
   if (nodeName === 'figure') {
-    if (node.className.match(/^md-block-image/)) {
-      const imageNode = node.querySelector('img');
-      return {
-        type: Block.IMAGE,
-        data: {
-          src: imageNode && imageNode.src,
-        },
-      };
-    } else if (node.className === `md-block-${Block.ATOMIC.toLowerCase()}`) {
+    if (node.className === `md-block-${Block.ATOMIC.toLowerCase()}`) {
       return {
         type: Block.ATOMIC,
         data: {},

@@ -10,10 +10,10 @@ const RenderMap = Map({
   [Block.TODO]: {
     element: 'div',
   },
-  [Block.IMAGE]: {
-    element: 'figure',
-  },
   [Block.BREAK]: {
+    element: 'div',
+  },
+  [Block.ACTIVITY]: {
     element: 'div',
   },
 }).merge(DefaultDraftBlockRenderMap);
