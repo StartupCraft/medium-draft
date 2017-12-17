@@ -1,6 +1,6 @@
 /*!
  * guided-editor
- * Version - 0.2.1
+ * Version - 0.2.2
  * Author - Brijesh Bittu <brijeshb42@gmail.com> (http://bitwiser.in/)
  */
-.md-block-ordered-list-item,.md-block-unordered-list-item{padding-left:20px}.md-block-ordered-list-item li,.md-block-unordered-list-item li{margin-bottom:5px}.md-block-atomic-embed{margin:10px 0}.md-inline-link,.md-inline-link:visited{color:#08c}
+.guided-block-ordered-list-item,.guided-block-unordered-list-item{padding-left:20px}.guided-block-ordered-list-item li,.guided-block-unordered-list-item li{margin-bottom:5px}.guided-block-atomic-embed{margin:10px 0}.guided-inline-link,.guided-inline-link:visited{color:#08c}
