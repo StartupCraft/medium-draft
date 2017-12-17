@@ -6,9 +6,11 @@ import { Inline, Block, Entity } from './util/constants';
 export const styleToHTML = (style) => {
   switch (style) {
     case Inline.ITALIC:
-      return <em className={`md-inline-${style.toLowerCase()}`} />;
+      return <i />;
     case Inline.BOLD:
-      return <strong className={`md-inline-${style.toLowerCase()}`} />;
+      return <strong />;
+    case Inline.REMINDER:
+      return <mark />;
     default:
       return null;
   }

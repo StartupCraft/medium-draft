@@ -28,6 +28,7 @@ import {
   keyBindingFn,
   createEditorState,
   addNewBlockAt,
+  addNewBlock,
   beforeInput,
   getCurrentBlock,
   rendererFn,
@@ -162,12 +163,14 @@ class EmbedSideButton extends React.Component {
   }
 
   onClick() {
-    const url = window.prompt('Enter a URL', 'https://www.youtube.com/watch?v=PMNFaAUs2mo');
-    this.props.close();
-    if (!url) {
-      return;
-    }
-    this.addEmbedURL(url);
+    this.props.setEditorState(
+      addNewBlock(this.props.getEditorState(), Block.ACTIVITY, {
+        id: 'new',
+        kind: 'goal',
+        text: '',
+      }),
+    )
+
   }
 
   addEmbedURL(url) {

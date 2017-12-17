@@ -14,13 +14,9 @@ describe('model/index', () => {
   describe('getDefaultBlockData()', () => {
     it('returns passed data for any other block', () => {
       expect(getDefaultBlockData(Block.ACTIVITY, {
-        activity: {
-          kind: 'memo',
-        },
+        kind: 'memo',
       })).to.deep.equal({
-        activity: {
-          kind: 'memo',
-        },
+        kind: 'memo',
       });
     });
   });
@@ -67,11 +63,7 @@ describe('model/index', () => {
       const es4 = resetBlockWithType(es, Block.ACTIVITY);
       currentBlock = getCurrentBlock(es4);
       expect(currentBlock.getType()).to.equal(Block.ACTIVITY);
-      expect(currentBlock.getData().toJS()).to.deep.equal({
-        activity: {
-          kind: 'memo',
-        },
-      });
+      expect(currentBlock.getData().toJS()).to.deep.equal({});
       expect(currentBlock.getText()).to.equal(block1.text);
       expect(es4.getLastChangeType()).to.equal('change-block-type');
     });
@@ -81,14 +73,10 @@ describe('model/index', () => {
     it('should update data of provided block', () => {
       const es3 = resetBlockWithType(es, Block.ACTIVITY);
       const es4 = updateDataOfBlock(es3, getCurrentBlock(es), Map({
-        activity: {
-          kind: 'memo',
-        },
+        kind: 'memo',
       }));
       expect(getCurrentBlock(es4).getData().toJS()).to.deep.equal({
-        activity: {
-          kind: 'memo',
-        },
+        kind: 'memo',
       });
       expect(es4.getLastChangeType()).to.equal('change-block-data');
     });
@@ -104,9 +92,7 @@ describe('model/index', () => {
       expect(currentBlock.getData().toJS()).to.deep.equal({});
 
       const es4 = addNewBlockAt(es3, currentBlock.getKey(), Block.ACTIVITY, {
-        activity: {
-          kind: 'memo',
-        },
+        kind: 'memo',
       });
       currentBlock = getCurrentBlock(es4);
       expect(es4.getCurrentContent().getBlockMap().count()).to.equal(4);

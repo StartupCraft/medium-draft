@@ -418,14 +418,13 @@ class MediumDraftEditor extends React.Component {
       const selectedText = block.getText().slice(start, end);
 
       const data = block.getData();
-      const activity = data.get('activity');
 
       const nextBlock = block.merge({
         characterList,
-        data: data.set('activity', Object.assign({}, activity, {
+        data: data.merge({
           reminderText: selectedText,
           remindAt: addDays(new Date(), 3),
-        })),
+        }),
       });
 
       this.onChange(RichUtils.toggleInlineStyle(
