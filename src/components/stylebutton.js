@@ -16,11 +16,11 @@ export default class StyleButton extends React.Component {
     if (this.props.style === HYPERLINK) {
       return null;
     }
-    let className = 'md-RichEditor-styleButton';
+    let className = 'guided-styleButton';
     if (this.props.active) {
-      className += ' md-RichEditor-activeButton';
+      className += ' guided-activeButton';
     }
-    className += ` md-RichEditor-styleButton-${this.props.style.toLowerCase()}`;
+    className += ` guided-styleButton-${this.props.style.toLowerCase()}`;
     return (
       <span
         className={`${className} hint--top`}

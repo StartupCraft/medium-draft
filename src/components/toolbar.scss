@@ -27,7 +27,7 @@
 $toolbar-color: #FFFFFF;
 
 
-.md-editor-toolbar {
+.guided-editor-toolbar {
   background: $toolbar-color;
   color: #5c68e0;
   border: none;
@@ -43,13 +43,13 @@ $toolbar-color: #FFFFFF;
 
   // transition: top 75ms ease-out,left 75ms ease-out;
 
-  &.md-editor-toolbar--isopen {
+  &.guided-editor-toolbar--isopen {
     visibility: visible;
     // transition: top 75ms ease-out,left 75ms ease-out;
     // animation: pop-upwards 180ms forwards linear;
   }
 
-  &.md-editor-toolbar--linkinput {
+  &.guided-editor-toolbar--linkinput {
     // display:block;
     animation: pop-downwards 200ms forwards linear;
   }
@@ -65,7 +65,7 @@ $toolbar-color: #FFFFFF;
     border-left: 5px solid transparent;
   }
 
-  .md-url-input {
+  .guided-url-input {
     box-sizing: border-box;
     border-radius: 2px;
     display: block;
@@ -85,7 +85,7 @@ $toolbar-color: #FFFFFF;
     }
   }
 
-  .md-url-input-close {
+  .guided-url-input-close {
     position: absolute;
     right: 8px;
     top: 2.5px;
@@ -94,10 +94,10 @@ $toolbar-color: #FFFFFF;
   }
 }
 
-.md-editor-toolbar-edit-link {
+.guided-editor-toolbar-edit-link {
   padding: 4px 5px;
   font-size: 0.8em;
-  width: 320px;
+  width: 270px;
 
   a {
     color: #5c68e0;
@@ -120,20 +120,20 @@ $toolbar-color: #FFFFFF;
     margin: 5px 0;
     cursor: pointer;
 
-    &.md-editor-toolbar-edit-button {
+    &.guided-editor-toolbar-edit-button {
       border-right: 1px solid #fff;
     }
   }
 }
 
-.md-RichEditor-controls {
+.guided-controls {
   font-family: 'Helvetica', sans-serif;
   font-size: 14px;
   display: inline-block;
   border-right: 1px solid #dbdbdb;
   position: relative;
 
-  &.md-RichEditor-show-link-input {
+  &.guided-show-link-input {
     padding: 6px 10px;
   }
 
@@ -141,17 +141,23 @@ $toolbar-color: #FFFFFF;
     border-right: none;
   }
 
-  .md-RichEditor-linkButton {
-    padding: 0 5px;
+  .guided-linkButton {
+    padding: 6px 5px;
     color: #fff;
     text-decoration: none;
+
+    > svg {
+      transform: translateY(1px);
+      stroke: #5c68e0;
+    }
   }
 }
 
-.md-RichEditor-styleButton {
+.guided-styleButton {
   color: #5c68e0;
   cursor: pointer;
   display: inline-block;
+  text-align: center;
   padding: 6px 10px;
 
   &:hover {
@@ -166,25 +172,25 @@ $toolbar-color: #FFFFFF;
     margin-right: 0;
   }
 
-  &.md-RichEditor-styleButton-bold {
+  &.guided-styleButton-bold {
     font-weight: bold;
   }
-  &.md-RichEditor-styleButton-italic {
+  &.guided-styleButton-italic {
     font-style: italic;
   }
 }
 
-.md-RichEditor-activeButton {
+.guided-activeButton {
   color: #5c68e0;
   background: #f4f4f4;
 
   &:hover {
-    color: #08c;
+    color: #5c68e0;
   }
 }
 
-.md-RichEditor-controls-block {
-  .md-RichEditor-styleButton:first-child {
+.guided-controls-block {
+  .guided-styleButton:first-child {
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
   }

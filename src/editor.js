@@ -519,7 +519,7 @@ class MediumDraftEditor extends React.Component {
   render() {
     const { editorState, editorEnabled, disableToolbar, showLinkEditToolbar, toolbarConfig } = this.props;
     const showAddButton = editorEnabled;
-    const editorClass = `md-RichEditor-editor${!editorEnabled ? ' md-RichEditor-readonly' : ''}`;
+    const editorClass = `guided-editor${!editorEnabled ? ' guided-readonly' : ''}`;
     let isCursorLink = false;
     if (editorEnabled && showLinkEditToolbar) {
       isCursorLink = isCursorBetweenLink(editorState);
@@ -527,59 +527,57 @@ class MediumDraftEditor extends React.Component {
     const blockButtons = this.configureToolbarBlockOptions(toolbarConfig);
     const inlineButtons = this.configureToolbarInlineOptions(toolbarConfig);
     return (
-      <div className="md-RichEditor-root">
-        <div className={editorClass}>
-          <Editor
-            ref={(node) => { this._editorNode = node; }}
-            {...this.props}
-            editorState={editorState}
-            blockRendererFn={this.blockRendererFn}
-            blockStyleFn={this.props.blockStyleFn}
-            onChange={this.onChange}
-            onTab={this.onTab}
-            onUpArrow={this.onUpArrow}
-            blockRenderMap={this.props.blockRenderMap}
-            handleKeyCommand={this.handleKeyCommand}
-            handleBeforeInput={this.handleBeforeInput}
-            handleReturn={this.handleReturn}
-            handlePastedText={this.handlePastedText}
-            customStyleMap={this.props.customStyleMap}
-            readOnly={!editorEnabled}
-            keyBindingFn={this.props.keyBindingFn}
-            placeholder={this.props.placeholder}
-            spellCheck={editorEnabled && this.props.spellCheck}
-          />
-          {this.props.sideButtons.length > 0 && showAddButton && (
-            <AddButton
-              editorState={editorState}
-              getEditorState={this.getEditorState}
-              setEditorState={this.onChange}
-              focus={this.focus}
-              sideButtons={this.props.sideButtons}
-            />
+      <div className={editorClass}>
+        <Editor
+          ref={(node) => { this._editorNode = node; }}
+          {...this.props}
+          editorState={editorState}
+          blockRendererFn={this.blockRendererFn}
+          blockStyleFn={this.props.blockStyleFn}
+          onChange={this.onChange}
+          onTab={this.onTab}
+          onUpArrow={this.onUpArrow}
+          blockRenderMap={this.props.blockRenderMap}
+          handleKeyCommand={this.handleKeyCommand}
+          handleBeforeInput={this.handleBeforeInput}
+          handleReturn={this.handleReturn}
+          handlePastedText={this.handlePastedText}
+          customStyleMap={this.props.customStyleMap}
+          readOnly={!editorEnabled}
+          keyBindingFn={this.props.keyBindingFn}
+          placeholder={this.props.placeholder}
+          spellCheck={editorEnabled && this.props.spellCheck}
+        />
+        {this.props.sideButtons.length > 0 && showAddButton && (
+        <AddButton
+          editorState={editorState}
+          getEditorState={this.getEditorState}
+          setEditorState={this.onChange}
+          focus={this.focus}
+          sideButtons={this.props.sideButtons}
+        />
           )}
-          {!disableToolbar && (
-            <Toolbar
-              ref={(c) => { this.toolbar = c; }}
-              editorNode={this._editorNode}
-              editorState={editorState}
-              toggleBlockType={this.toggleBlockType}
-              toggleInlineStyle={this.toggleInlineStyle}
-              editorEnabled={editorEnabled}
-              setLink={this.setLink}
-              focus={this.focus}
-              blockButtons={blockButtons}
-              inlineButtons={inlineButtons}
-            />
+        {!disableToolbar && (
+        <Toolbar
+          ref={(c) => { this.toolbar = c; }}
+          editorNode={this._editorNode}
+          editorState={editorState}
+          toggleBlockType={this.toggleBlockType}
+          toggleInlineStyle={this.toggleInlineStyle}
+          editorEnabled={editorEnabled}
+          setLink={this.setLink}
+          focus={this.focus}
+          blockButtons={blockButtons}
+          inlineButtons={inlineButtons}
+        />
           )}
-          {isCursorLink && (
-            <LinkEditComponent
-              {...isCursorLink}
-              editorState={editorState}
-              removeLink={this.removeLink}
-              editLink={this.editLinkAfterSelection}
-            />)}
-        </div>
+        {isCursorLink && (
+        <LinkEditComponent
+          {...isCursorLink}
+          editorState={editorState}
+          removeLink={this.removeLink}
+          editLink={this.editLinkAfterSelection}
+        />)}
       </div>
     );
   }

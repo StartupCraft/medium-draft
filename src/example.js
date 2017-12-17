@@ -62,7 +62,7 @@ const newBlockToHTML = (block) => {
   if (block.type === Block.ATOMIC) {
     if (block.text === 'E') {
       return {
-        start: '<figure class="md-block-atomic md-block-atomic-embed">',
+        start: '<figure class="guided-block-atomic guided-block-atomic-embed">',
         end: '</figure>',
       };
     }
@@ -136,7 +136,7 @@ class SeparatorSideButton extends React.Component {
   render() {
     return (
       <button
-        className="md-sb-button md-sb-img-button"
+        className="guided-sb-button guided-sb-img-button"
         type="button"
         title="Add a separator"
         onClick={this.onClick}
@@ -191,7 +191,7 @@ class EmbedSideButton extends React.Component {
   render() {
     return (
       <button
-        className="md-sb-button md-sb-img-button"
+        className="guided-sb-button guided-sb-img-button"
         type="button"
         title="Add an Embed"
         onClick={this.onClick}
@@ -258,7 +258,7 @@ class AtomicEmbedComponent extends React.Component {
     const { url } = this.props.data;
     const innerHTML = `<div><a class="embedly-card" href="${url}" data-card-controls="0" data-card-theme="dark">Embedded ― ${url}</a></div>`;
     return (
-      <div className="md-block-atomic-embed">
+      <div className="guided-block-atomic-embed">
         <div dangerouslySetInnerHTML={{ __html: innerHTML }} />
       </div>
     );
@@ -278,7 +278,7 @@ const AtomicBlock = (props) => {
   if (blockProps.components[type]) {
     const AtComponent = blockProps.components[type];
     return (
-      <div className={`md-block-atomic-wrapper md-block-atomic-wrapper-${type}`}>
+      <div className={`guided-block-atomic-wrapper guided-block-atomic-wrapper-${type}`}>
         <AtComponent data={data} />
       </div>
     );

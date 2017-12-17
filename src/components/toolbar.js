@@ -204,21 +204,21 @@ export default class Toolbar extends React.Component {
       isOpen = false;
     }
     if (showURLInput) {
-      let className = `md-editor-toolbar${(isOpen ? ' md-editor-toolbar--isopen' : '')}`;
-      className += ' md-editor-toolbar--linkinput';
+      let className = `guided-editor-toolbar${(isOpen ? ' guided-editor-toolbar--isopen' : '')}`;
+      className += ' guided-editor-toolbar--linkinput';
       return (
         <div
           className={className}
         >
           <div
-            className="md-RichEditor-controls md-RichEditor-show-link-input"
+            className="guided-controls guided-show-link-input"
             style={{ display: 'block' }}
           >
-            <span className="md-url-input-close" onClick={this.hideLinkInput}>&times;</span>
+            <span className="guided-url-input-close" onClick={this.hideLinkInput}>&times;</span>
             <input
               ref={node => { this.urlinput = node; }}
               type="text"
-              className="md-url-input"
+              className="guided-url-input"
               onKeyDown={this.onKeyDown}
               onChange={this.onChange}
               placeholder="Press ENTER or ESC"
@@ -245,7 +245,7 @@ export default class Toolbar extends React.Component {
     }
     return (
       <div
-        className={`md-editor-toolbar${(isOpen ? ' md-editor-toolbar--isopen' : '')}`}
+        className={`guided-editor-toolbar${(isOpen ? ' guided-editor-toolbar--isopen' : '')}`}
       >
         {this.props.blockButtons.length > 0 ? (
           <BlockToolbar
@@ -262,9 +262,9 @@ export default class Toolbar extends React.Component {
           />
         ) : null}
         {hasHyperLink && (
-          <div className="md-RichEditor-controls">
+          <div className="guided-controls">
             <span
-              className="md-RichEditor-styleButton md-RichEditor-linkButton hint--top"
+              className="guided-styleButton guided-linkButton hint--top"
               onClick={this.handleLinkInput}
               aria-label={hyperlinkDescription}
             >

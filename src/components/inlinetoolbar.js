@@ -10,7 +10,7 @@ const InlineToolbar = (props) => {
   }
   const currentStyle = props.editorState.getCurrentInlineStyle();
   return (
-    <div className="md-RichEditor-controls md-RichEditor-controls-inline">
+    <div className="guided-controls guided-controls-inline">
       {props.buttons.map(type => {
         const iconLabel = {};
         iconLabel.label = type.label;

@@ -1,5 +1,5 @@
 .public-DraftEditor-content {
-    .md-block-paragraph {
+    .guided-block-paragraph {
         margin: 20px 0;
 
         &:first-child {
@@ -12,7 +12,7 @@
     }
 }
 
-.md-block-checkbox {
+.guided-block-checkbox {
     input[type=checkbox] {
         float: left;
         margin-right: 10px;

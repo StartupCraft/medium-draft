@@ -1,7 +1,7 @@
 $add-btn-width: 39px;
 
 
-.md-side-toolbar {
+.guided-side-toolbar {
   position: absolute;
   z-index: 1;
   left: -60px;
@@ -9,7 +9,7 @@ $add-btn-width: 39px;
   transition: all 0.2s ease;
 }
 
-.md-sb-button {
+.guided-sb-button {
   background: #ffffff;
   border: none;
   color: #6D6D6D;
@@ -39,7 +39,7 @@ $add-btn-width: 39px;
     color: green;
   }
 
-  &.md-sb-img-button {
+  &.guided-sb-img-button {
     background-color: white;
   }
 
@@ -52,23 +52,23 @@ $add-btn-width: 39px;
   }
 }
 
-.md-add-button {
+.guided-add-button {
 
-  &.md-open-button {
+  &.guided-open-button {
     svg {
       transform: rotate(45deg);
     }
   }
 }
 
-.md-example-appear {
+.guided-example-appear {
   // opacity: 0.01;
   // transform: translateX(-25px) scale(0.1);
   transform: translate3d(-38px, 0px, 0px);
   opacity: 0;
 }
 
-.md-example-appear.md-example-appear-active {
+.guided-example-appear.guided-example-appear-active {
   // opacity: 1;
   // transform: translate(0px, 0px) scale(1, 1) rotate(135deg);
   // transform: translateX(0px), scale(1);
@@ -77,23 +77,23 @@ $add-btn-width: 39px;
   transition: all .5s ease-in;
 }
 
-.md-example-enter {
+.guided-example-enter {
   // opacity: 0.01;
   transform: translate3d(-38px, 0px, 0px);
   opacity: 0;
 }
 
-.md-example-enter.md-example-enter-active {
+.guided-example-enter.guided-example-enter-active {
   opacity: 1;
   transform: translate3d(0px, 0px, 0px);
   transition: all 500ms ease-in;
 }
 
-.md-example-leave {
+.guided-example-leave {
   opacity: 1;
 }
 
-.md-example-leave.md-example-leave-active {
+.guided-example-leave.guided-example-leave-active {
   opacity: 0.01;
   transition: opacity 300ms ease-in;
 }

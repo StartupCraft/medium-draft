@@ -151,10 +151,10 @@ export default class AddButton extends React.Component {
       return null;
     }
     return (
-      <div className="md-side-toolbar" style={this.state.style}>
+      <div className="guided-side-toolbar" style={this.state.style}>
         <button
           onClick={this.openToolbar}
-          className={`md-sb-button md-add-button${this.state.isOpen ? ' md-open-button' : ''}`}
+          className={`guided-sb-button guided-add-button${this.state.isOpen ? ' guided-open-button' : ''}`}
           type="button"
         >
           <svg width="16" height="16" viewBox="0 0 16 16" >
@@ -164,7 +164,7 @@ export default class AddButton extends React.Component {
         </button>
         {this.state.isOpen ? (
           <CSSTransitionGroup
-            transitionName="md-example"
+            transitionName="guided-example"
             transitionEnterTimeout={200}
             transitionLeaveTimeout={100}
             transitionAppearTimeout={100}

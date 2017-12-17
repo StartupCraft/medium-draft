@@ -1,4 +1,4 @@
-.md-block-unordered-list-item, .md-block-ordered-list-item {
+.guided-block-unordered-list-item, .guided-block-ordered-list-item {
     padding-left: 20px;
 
     li {
@@ -6,11 +6,11 @@
     }
 }
 
-.md-block-atomic-embed {
+.guided-block-atomic-embed {
   margin: 10px 0;
 }
 
-.md-inline-link {
+.guided-inline-link {
     color: #08c;
 
     &:visited {

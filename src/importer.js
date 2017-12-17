@@ -25,7 +25,7 @@ export const htmlToEntity = (nodeName, node, createEntity) => {
 
 export const htmlToBlock = (nodeName, node) => {
   if (nodeName === 'div') {
-    if (node.className === `md-block-${Block.ATOMIC.toLowerCase()}`) {
+    if (node.className === `guided-block-${Block.ATOMIC.toLowerCase()}`) {
       return {
         type: Block.ATOMIC,
         data: {},

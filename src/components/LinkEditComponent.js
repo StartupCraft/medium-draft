@@ -92,15 +92,15 @@ export default class LinkEditComponent extends React.Component {
     }
     return (
       <div
-        className="md-editor-toolbar md-editor-toolbar--isopen md-editor-toolbar-edit-link"
+        className="guided-editor-toolbar guided-editor-toolbar--isopen guided-editor-toolbar-edit-link"
         style={this.state.position}
         ref={(element) => {
           this.toolbar = element;
         }}
       >
         <a href={this.props.url} title={this.props.url} target="_blank" rel="noopener noreferrer">{url}</a>
-        <button className="md-editor-toolbar-unlink-button" onClick={this.removeLink}>Unlink</button>
-        <button className="md-editor-toolbar-edit-button" onClick={this.editLink}>Edit</button>
+        <button className="guided-editor-toolbar-unlink-button" onClick={this.removeLink}>Unlink</button>
+        <button className="guided-editor-toolbar-edit-button" onClick={this.editLink}>Edit</button>
       </div>
     );
   }

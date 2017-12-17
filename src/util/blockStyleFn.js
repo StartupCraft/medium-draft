@@ -4,7 +4,7 @@ import { Block } from './constants';
 Get custom classnames for each of the different block types supported.
 */
 
-const BASE_BLOCK_CLASS = 'md-block';
+const BASE_BLOCK_CLASS = 'guided-block';
 
 export default (block) => {
   switch (block.getType()) {

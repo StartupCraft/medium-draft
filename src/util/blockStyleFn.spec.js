@@ -2,7 +2,7 @@ import { ContentBlock } from 'draft-js';
 import blockStyleFn from './blockStyleFn';
 import { Block } from './constants';
 
-const BASE_BLOCK_CLASS = 'md-block';
+const BASE_BLOCK_CLASS = 'guided-block';
 
 describe('blockStyleFn()', () => {
   it('should return block class for UNKNOWN', () => {
