@@ -14,6 +14,41 @@ export const getDefaultBlockData = (blockType, initialData = {}) => {
   }
 };
 
+/*
+Update block in state by own key and returns state
+ */
+export const updateBlock = (editorState, block) => {
+  const content = editorState.getCurrentContent();
+  const selectionState = editorState.getSelection();
+
+  const newContentState = content.merge({
+    blockMap: content.getBlockMap().set(block.getKey(), block),
+    selectionAfter: selectionState,
+  });
+
+  return EditorState.push(editorState, newContentState, 'insert-fragment');
+};
+
+/*
+Delete block by key and returns state
+ */
+export const deleteBlockByKey = (editorState, key) => {
+  const content = editorState.getCurrentContent();
+
+  const newContentState = content.merge({
+    blockMap: content.getBlockMap().delete(key),
+  });
+
+  return EditorState.push(editorState, newContentState, 'remove-range');
+};
+
+/*
+Returns true if multiple blocks selected
+ */
+export const isMultiBlockSelection = editorState => {
+  const selection = editorState.getSelection();
+  return selection.getAnchorKey() !== selection.getFocusKey();
+};
 
 /*
 Get currentBlock in the editorState.

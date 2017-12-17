@@ -25,24 +25,6 @@ export const styleToHTML = (style) => {
 export const blockToHTML = (block) => {
   const blockType = block.type;
   switch (blockType) {
-    case Block.H1:
-      // eslint-disable-next-line jsx-a11y/heading-has-content
-      return <h1 className={`md-block-${blockType.toLowerCase()}`} />;
-    case Block.H2:
-      // eslint-disable-next-line jsx-a11y/heading-has-content
-      return <h2 className={`md-block-${blockType.toLowerCase()}`} />;
-    case Block.H3:
-      // eslint-disable-next-line jsx-a11y/heading-has-content
-      return <h3 className={`md-block-${blockType.toLowerCase()}`} />;
-    case Block.H4:
-      // eslint-disable-next-line jsx-a11y/heading-has-content
-      return <h4 className={`md-block-${blockType.toLowerCase()}`} />;
-    case Block.H5:
-      // eslint-disable-next-line jsx-a11y/heading-has-content
-      return <h5 className={`md-block-${blockType.toLowerCase()}`} />;
-    case Block.H6:
-      // eslint-disable-next-line jsx-a11y/heading-has-content
-      return <h6 className={`md-block-${blockType.toLowerCase()}`} />;
     case Block.BLOCKQUOTE_CAPTION:
     case Block.CAPTION:
       return {

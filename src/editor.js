@@ -11,6 +11,7 @@ import {
 } from 'draft-js';
 import isSoftNewlineEvent from 'draft-js/lib/isSoftNewlineEvent';
 import { OrderedMap } from 'immutable';
+import addDays from 'date-fns/addDays';
 
 import AddButton from './components/addbutton';
 import Toolbar, { BLOCK_BUTTONS, INLINE_BUTTONS } from './components/toolbar';
@@ -23,6 +24,7 @@ import keyBindingFn from './util/keybinding';
 import {
   Block,
   Entity as E,
+  Inline,
   HANDLED,
   NOT_HANDLED,
   KEY_COMMANDS } from './util/constants';
@@ -33,6 +35,7 @@ import {
   resetBlockWithType,
   addNewBlockAt,
   isCursorBetweenLink,
+  updateBlock,
 } from './model';
 
 import ImageButton from './components/sides/image';
@@ -384,9 +387,6 @@ class MediumDraftEditor extends React.Component {
           case Block.BLOCKQUOTE_CAPTION:
           case Block.CAPTION:
           case Block.TODO:
-          case Block.H2:
-          case Block.H3:
-          case Block.H1:
             this.onChange(resetBlockWithType(editorState, Block.UNSTYLED));
             return HANDLED;
           default:
@@ -431,12 +431,40 @@ class MediumDraftEditor extends React.Component {
   for some key combinations handled by default inside draft-js).
   */
   _toggleInlineStyle(inlineStyle) {
-    this.onChange(
-      RichUtils.toggleInlineStyle(
-        this.props.editorState,
+    const { editorState } = this.props;
+
+    if (inlineStyle === Inline.REMINDER) {
+      const block = getCurrentBlock(editorState);
+      const characterList = block.getCharacterList().map(c => (
+        c.set('style', c.get('style').delete('REMINDER'))
+      ));
+
+      const selectionState = editorState.getSelection();
+      const start = selectionState.getStartOffset();
+      const end = selectionState.getEndOffset();
+      const selectedText = block.getText().slice(start, end);
+
+      const data = block.getData();
+      const activity = data.get('activity');
+
+      const nextBlock = block.merge({
+        characterList,
+        data: data.set('activity', Object.assign({}, activity, {
+          reminderText: selectedText,
+          remindAt: addDays(new Date(), 3),
+        })),
+      });
+
+      this.onChange(RichUtils.toggleInlineStyle(
+        updateBlock(editorState, nextBlock),
         inlineStyle
-      )
-    );
+      ));
+    } else {
+      this.onChange(RichUtils.toggleInlineStyle(
+        editorState,
+        inlineStyle
+      ));
+    }
   }
 
   removeLink = (blockKey, entityKey) => {

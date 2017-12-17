@@ -8,7 +8,7 @@ import BlockToolbar from './blocktoolbar';
 import InlineToolbar from './inlinetoolbar';
 
 import { getSelection, getSelectionRect } from '../util/index';
-import { getCurrentBlock } from '../model/index';
+import { getCurrentBlock, isMultiBlockSelection } from '../model';
 import { Inline, Entity, HYPERLINK } from '../util/constants';
 
 export default class Toolbar extends React.Component {
@@ -72,7 +72,8 @@ export default class Toolbar extends React.Component {
     if (!this.props.editorEnabled || this.state.showURLInput) {
       return;
     }
-    const selectionState = this.props.editorState.getSelection();
+    const { editorState } = this.props;
+    const selectionState = editorState.getSelection();
     if (selectionState.isCollapsed()) {
       return;
     }
@@ -199,7 +200,7 @@ export default class Toolbar extends React.Component {
     const { editorState, editorEnabled, inlineButtons } = this.props;
     const { showURLInput, urlInputValue } = this.state;
     let isOpen = true;
-    if (!editorEnabled || editorState.getSelection().isCollapsed()) {
+    if (!editorEnabled || editorState.getSelection().isCollapsed() || isMultiBlockSelection(editorState)) {
       isOpen = false;
     }
     if (showURLInput) {

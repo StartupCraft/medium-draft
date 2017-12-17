@@ -35,37 +35,7 @@ export const htmlToEntity = (nodeName, node, createEntity) => {
 };
 
 export const htmlToBlock = (nodeName, node) => {
-  if (nodeName === 'h1') {
-    return {
-      type: Block.H1,
-      data: {},
-    };
-  } else if (nodeName === 'h2') {
-    return {
-      type: Block.H2,
-      data: {},
-    };
-  } else if (nodeName === 'h3') {
-    return {
-      type: Block.H3,
-      data: {},
-    };
-  } else if (nodeName === 'h4') {
-    return {
-      type: Block.H4,
-      data: {},
-    };
-  } else if (nodeName === 'h5') {
-    return {
-      type: Block.H5,
-      data: {},
-    };
-  } else if (nodeName === 'h6') {
-    return {
-      type: Block.H6,
-      data: {},
-    };
-  } else if (nodeName === 'p' && (
+  if (nodeName === 'p' && (
              node.className === `md-block-${Block.CAPTION.toLowerCase()}` ||
              node.className === `md-block-${Block.BLOCKQUOTE_CAPTION.toLowerCase()}`)) {
     return {

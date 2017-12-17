@@ -28,6 +28,9 @@ export {
   resetBlockWithType,
   updateDataOfBlock,
   addNewBlockAt,
+  isMultiBlockSelection,
+  deleteBlockByKey,
+  updateBlock,
 } from './model';
 
 // eslint-disable-next-line no-undef
