@@ -1,6 +1,6 @@
 {
   "name": "guided-editor",
-  "version": "0.0.6",
+  "version": "0.1.0",
   "description": "A medium like rich text editor built upon draft-js with an emphasis on eliminating mouse usage by adding relevant keyboard shortcuts",
   "main": "lib/index.js",
   "repository": "https://github.com/brijeshb42/medium-draft",
@@ -29,6 +29,7 @@
   "author": "Brijesh Bittu <brijeshb42@gmail.com> (http://bitwiser.in/)",
   "license": "MIT",
   "dependencies": {
+    "date-fns": "^2.0.0-alpha.7",
     "draft-js": "^0.10.0",
     "immutable": "^3.7.6",
     "prop-types": "^15.5.8",
