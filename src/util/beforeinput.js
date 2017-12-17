@@ -14,7 +14,6 @@ export const StringToTypeMap = {
   '- ': Block.UL,
   '1.': Block.OL,
   '==': Block.UNSTYLED,
-  '[]': Block.TODO,
 };
 
 

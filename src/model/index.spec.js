@@ -12,19 +12,15 @@ import { Block } from '../util/constants';
 
 describe('model/index', () => {
   describe('getDefaultBlockData()', () => {
-    it('returns proper data for todo block', () => {
-      expect(getDefaultBlockData(Block.TODO)).to.deep.equal({
-        checked: false,
-      });
-    });
-
     it('returns passed data for any other block', () => {
       expect(getDefaultBlockData(Block.ACTIVITY, {
-        src: 'https://www.google.com',
-        alt: 'Google',
+        activity: {
+          kind: 'memo',
+        },
       })).to.deep.equal({
-        src: 'https://www.google.com',
-        alt: 'Google',
+        activity: {
+          kind: 'memo',
+        },
       });
     });
   });
@@ -32,7 +28,7 @@ describe('model/index', () => {
   const block1 = {
     key: '2vr7c',
     text: 'medium-draft',
-    type: 'header-three',
+    type: 'atomic:activity',
     depth: 0,
     inlineStyleRanges: [],
     entityRanges: [],
@@ -41,7 +37,7 @@ describe('model/index', () => {
   const block2 = {
     key: 'fksil',
     text: 'This page is fully editable.',
-    type: 'header-three',
+    type: 'atomic:activity',
     depth: 0,
     inlineStyleRanges: [],
     entityRanges: [],
@@ -68,11 +64,13 @@ describe('model/index', () => {
       let currentBlock = getCurrentBlock(es3);
       expect(currentBlock.getType()).to.equal(Block.UNSTYLED);
       expect(currentBlock.getText()).to.equal('hola');
-      const es4 = resetBlockWithType(es, Block.TODO);
+      const es4 = resetBlockWithType(es, Block.ACTIVITY);
       currentBlock = getCurrentBlock(es4);
-      expect(currentBlock.getType()).to.equal(Block.TODO);
+      expect(currentBlock.getType()).to.equal(Block.ACTIVITY);
       expect(currentBlock.getData().toJS()).to.deep.equal({
-        checked: false,
+        activity: {
+          kind: 'memo',
+        },
       });
       expect(currentBlock.getText()).to.equal(block1.text);
       expect(es4.getLastChangeType()).to.equal('change-block-type');
@@ -81,12 +79,16 @@ describe('model/index', () => {
 
   describe('updateDataOfBlock()', () => {
     it('should update data of provided block', () => {
-      const es3 = resetBlockWithType(es, Block.TODO);
+      const es3 = resetBlockWithType(es, Block.ACTIVITY);
       const es4 = updateDataOfBlock(es3, getCurrentBlock(es), Map({
-        checked: true,
+        activity: {
+          kind: 'memo',
+        },
       }));
       expect(getCurrentBlock(es4).getData().toJS()).to.deep.equal({
-        checked: true,
+        activity: {
+          kind: 'memo',
+        },
       });
       expect(es4.getLastChangeType()).to.equal('change-block-data');
     });
@@ -101,8 +103,10 @@ describe('model/index', () => {
         es3.getCurrentContent().getBlockMap().get(currentBlock.getKey()).toJS());
       expect(currentBlock.getData().toJS()).to.deep.equal({});
 
-      const es4 = addNewBlockAt(es3, currentBlock.getKey(), Block.TODO, {
-        checked: true,
+      const es4 = addNewBlockAt(es3, currentBlock.getKey(), Block.ACTIVITY, {
+        activity: {
+          kind: 'memo',
+        },
       });
       currentBlock = getCurrentBlock(es4);
       expect(es4.getCurrentContent().getBlockMap().count()).to.equal(4);

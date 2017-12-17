@@ -9,10 +9,6 @@ import customStyleMap from './util/customstylemap';
 import createEditorState from './model/content';
 
 import AtomicBlock from './components/blocks/atomic';
-import TodoBlock from './components/blocks/todo';
-import BreakBlock from './components/blocks/break';
-
-import BreakSideButton from './components/sides/break';
 
 export { Block, Inline, Entity, HANDLED, NOT_HANDLED } from './util/constants';
 export { BLOCK_BUTTONS, INLINE_BUTTONS } from './components/toolbar';
@@ -44,9 +40,6 @@ export {
   keyBindingFn,
   rendererFn,
   AtomicBlock,
-  TodoBlock,
-  BreakBlock,
-  BreakSideButton,
 };
 
 export default Editor;

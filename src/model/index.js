@@ -9,7 +9,11 @@ Returns default block-level metadata for various block type. Empty object otherw
 */
 export const getDefaultBlockData = (blockType, initialData = {}) => {
   switch (blockType) {
-    case Block.TODO: return { checked: false };
+    case Block.ACTIVITY: return {
+      activity: {
+        kind: 'memo',
+      },
+    };
     default: return initialData;
   }
 };

@@ -284,17 +284,6 @@ export const BLOCK_BUTTONS = [
     icon: 'list-ul',
     description: 'Unordered List',
   },
-  {
-    label: 'OL',
-    style: 'ordered-list-item',
-    icon: 'list-ol',
-    description: 'Ordered List',
-  },
-  {
-    label: '✓',
-    style: 'todo',
-    description: 'Todo List',
-  },
 ];
 
 export const INLINE_BUTTONS = [

@@ -9,8 +9,6 @@ export const Block = {
   OL: 'ordered-list-item',
   UL: 'unordered-list-item',
   ATOMIC: 'atomic',
-  TODO: 'todo',
-  BREAK: 'atomic:break',
   ACTIVITY: 'atomic:activity',
 };
 

@@ -1,4 +1,3 @@
-import { Map } from 'immutable';
 import { ContentBlock } from 'draft-js';
 import blockStyleFn from './blockStyleFn';
 import { Block } from './constants';
@@ -34,24 +33,5 @@ describe('blockStyleFn()', () => {
     });
     expect(blockStyleFn(normalBlock)).to.equal(
       `${BASE_BLOCK_CLASS} ${BASE_BLOCK_CLASS}-activity`);
-  });
-
-  it('should return block class for TODO', () => {
-    const todoBlock = new ContentBlock({
-      type: Block.TODO,
-    });
-    const todoBlockChecked = new ContentBlock({
-      type: Block.TODO,
-      data: Map({
-        checked: true,
-      }),
-    });
-
-    const baseTodoClass = `${BASE_BLOCK_CLASS} ${BASE_BLOCK_CLASS}-paragraph`;
-
-    expect(blockStyleFn(todoBlock)).to.equal(
-      `${baseTodoClass} ${BASE_BLOCK_CLASS}-todo ${BASE_BLOCK_CLASS}-todo-unchecked`);
-    expect(blockStyleFn(todoBlockChecked)).to.equal(
-      `${baseTodoClass} ${BASE_BLOCK_CLASS}-todo ${BASE_BLOCK_CLASS}-todo-checked`);
   });
 });

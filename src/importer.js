@@ -24,7 +24,7 @@ export const htmlToEntity = (nodeName, node, createEntity) => {
 };
 
 export const htmlToBlock = (nodeName, node) => {
-  if (nodeName === 'figure') {
+  if (nodeName === 'div') {
     if (node.className === `md-block-${Block.ATOMIC.toLowerCase()}`) {
       return {
         type: Block.ATOMIC,
@@ -32,19 +32,6 @@ export const htmlToBlock = (nodeName, node) => {
       };
     }
     return undefined;
-  } else if (nodeName === 'div' && node.className && node.className.match(/^md-block-todo/)) {
-    const inputNode = node.querySelector('input');
-    return {
-      type: Block.TODO,
-      data: {
-        checked: inputNode && inputNode.checked,
-      },
-    };
-  } else if (nodeName === 'hr') {
-    return {
-      type: Block.BREAK,
-      data: {},
-    };
   } else if (nodeName === 'p') {
     return {
       type: Block.UNSTYLED,

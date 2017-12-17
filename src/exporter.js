@@ -22,29 +22,6 @@ export const blockToHTML = (block) => {
         start: `<figure className="md-block-${blockType.toLowerCase()}">`,
         end: '</figure>',
       };
-    case Block.TODO: {
-      const checked = block.data.checked || false;
-      let inp = '';
-      let containerClass = '';
-      if (checked) {
-        inp = '<input type=checkbox disabled checked="checked" />';
-        containerClass = 'md-block-todo-checked';
-      } else {
-        inp = '<input type=checkbox disabled />';
-        containerClass = 'md-block-todo-unchecked';
-      }
-      return {
-        start: `<div class="md-block-${blockType.toLowerCase()} ${containerClass}">${inp}<p>`,
-        end: '</p></div>',
-      };
-    }
-    case Block.BREAK:
-      return <hr className={`md-block-${blockType.toLowerCase()}`} />;
-    case Block.OL:
-      return {
-        element: <li />,
-        nest: <ol className={`md-block-${blockType.toLowerCase()}`} />,
-      };
     case Block.UL:
       return {
         element: <li />,

@@ -32,7 +32,6 @@ import beforeInput, { StringToTypeMap } from './util/beforeinput';
 import blockStyleFn from './util/blockStyleFn';
 import {
   getCurrentBlock,
-  resetBlockWithType,
   addNewBlockAt,
   isCursorBetweenLink,
   updateBlock,
@@ -40,7 +39,7 @@ import {
 
 /*
 A wrapper over `draft-js`'s default **Editor** component which provides
-some built-in customisations like custom blocks (todo, etc) and
+some built-in customisations like custom blocks (activity, etc) and
 some key handling for ease of use so that users' mouse usage is minimum.
 */
 class MediumDraftEditor extends React.Component {
@@ -109,7 +108,6 @@ class MediumDraftEditor extends React.Component {
       Block.UNSTYLED,
       Block.OL,
       Block.UL,
-      Block.TODO,
     ],
     sideButtons: [],
     disableToolbar: false,
@@ -221,7 +219,7 @@ class MediumDraftEditor extends React.Component {
   /**
    * Override which text modifications are available according BLOCK_BUTTONS style property.
    * Defaults all of them if no toolbarConfig.block passed:
-   *   block: ['ordered-list-item', 'unordered-list-item', 'header-three', 'todo'],
+   *   block: ['ordered-list-item', 'unordered-list-item'],
    * Example parameter: toolbarConfig = {
    *   block: ['ordered-list-item', 'unordered-list-item'],
    *   inline: ['BOLD', 'ITALIC', 'hyperlink'],
@@ -364,9 +362,6 @@ class MediumDraftEditor extends React.Component {
         switch (blockType) {
           case Block.UL:
           case Block.OL:
-          case Block.TODO:
-            this.onChange(resetBlockWithType(editorState, Block.UNSTYLED));
-            return HANDLED;
           default:
             return NOT_HANDLED;
         }

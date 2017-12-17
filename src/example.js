@@ -20,7 +20,6 @@ import './components/addbutton.scss';
 import './components/toolbar.scss';
 import './components/blocks/text.scss';
 import './components/blocks/atomic.scss';
-import './components/blocks/todo.scss';
 
 import {
   Editor,
@@ -59,15 +58,12 @@ const SQUOTE_START = '‘';
 const SQUOTE_END = '’';
 
 const newBlockToHTML = (block) => {
-  const blockType = block.type;
   if (block.type === Block.ATOMIC) {
     if (block.text === 'E') {
       return {
         start: '<figure class="md-block-atomic md-block-atomic-embed">',
         end: '</figure>',
       };
-    } else if (block.text === '-') {
-      return <div className="md-block-atomic md-block-atomic-break"><hr/></div>;
     }
   }
   return blockToHTML(block);
