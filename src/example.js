@@ -381,9 +381,6 @@ class App extends React.Component {
           // case 69: return 'toggle-edit-mode';
         }
       }
-      if (e.which === 72 /* Key H */) {
-        return 'toggleinline:HIGHLIGHT';
-      }
     }
     return keyBindingFn(e);
   }

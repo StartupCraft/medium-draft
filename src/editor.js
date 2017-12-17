@@ -109,7 +109,6 @@ class MediumDraftEditor extends React.Component {
       Block.UNSTYLED,
       Block.OL,
       Block.UL,
-      Block.CODE,
       Block.TODO,
     ],
     sideButtons: [],
@@ -225,7 +224,7 @@ class MediumDraftEditor extends React.Component {
    *   block: ['ordered-list-item', 'unordered-list-item', 'header-three', 'todo'],
    * Example parameter: toolbarConfig = {
    *   block: ['ordered-list-item', 'unordered-list-item'],
-   *   inline: ['BOLD', 'ITALIC', 'UNDERLINE', 'hyperlink'],
+   *   inline: ['BOLD', 'ITALIC', 'hyperlink'],
    * };
    */
   configureToolbarBlockOptions(toolbarConfig) {
@@ -239,10 +238,10 @@ class MediumDraftEditor extends React.Component {
    * Override which text modifications are available according INLINE_BUTTONS style property.
    * CASE SENSITIVE. Would be good clean up to lowercase inline styles consistently.
    * Defaults all of them if no toolbarConfig.inline passed:
-   *   inline: ['BOLD', 'ITALIC', 'UNDERLINE', 'hyperlink', 'HIGHLIGHT'],
+   *   inline: ['BOLD', 'ITALIC', 'hyperlink'],
    * Example parameter: toolbarConfig = {
    *   block: ['ordered-list-item', 'unordered-list-item'],
-   *   inline: ['BOLD', 'ITALIC', 'UNDERLINE', 'hyperlink'],
+   *   inline: ['BOLD', 'ITALIC', 'hyperlink'],
    * };
    */
   configureToolbarInlineOptions(toolbarConfig) {

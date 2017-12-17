@@ -59,32 +59,10 @@
     }
 }
 
-.md-inline-code {
-    font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
-    margin: 4px 0px;
-    font-size: 0.9em;
-    padding: 1px 3px;
-    color: rgb(85, 85, 85);
-    background-color: rgb(252, 252, 252);
-    border-width: 1px;
-    border-style: solid;
-    border-color: rgb(204, 204, 204) rgb(204, 204, 204) rgb(187, 187, 187);
-    border-image: initial;
-    border-radius: 3px;
-    box-shadow: rgb(187, 187, 187) 0px -1px 0px inset;
-}
-
-
 .md-inline-link {
     color: #08c;
 
     &:visited {
         color: #08c;
     }
-}
-
-.md-inline-highlight {
-    background: yellow;
-    display: inline;
-    padding: 2px 4px;
 }

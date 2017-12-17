@@ -28,8 +28,6 @@ export default (e) => {
       case 49: return changeType('ordered-list-item');
       // @
       case 50: return showLinkInput();
-      // #
-      case 51: return changeType('header-three');
       // *
       case 56: return changeType('unordered-list-item');
       // >

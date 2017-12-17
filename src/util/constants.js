@@ -8,7 +8,6 @@ export const Block = {
   PARAGRAPH: 'unstyled',
   OL: 'ordered-list-item',
   UL: 'unordered-list-item',
-  CODE: 'code-block',
   ATOMIC: 'atomic',
   TODO: 'todo',
   BREAK: 'atomic:break',
@@ -17,11 +16,7 @@ export const Block = {
 
 export const Inline = {
   BOLD: 'BOLD',
-  CODE: 'CODE',
   ITALIC: 'ITALIC',
-  STRIKETHROUGH: 'STRIKETHROUGH',
-  UNDERLINE: 'UNDERLINE',
-  HIGHLIGHT: 'HIGHLIGHT',
   REMINDER: 'REMINDER',
 };
 

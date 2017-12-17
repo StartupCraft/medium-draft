@@ -9,14 +9,6 @@ export const styleToHTML = (style) => {
       return <em className={`md-inline-${style.toLowerCase()}`} />;
     case Inline.BOLD:
       return <strong className={`md-inline-${style.toLowerCase()}`} />;
-    case Inline.STRIKETHROUGH:
-      return <strike className={`md-inline-${style.toLowerCase()}`} />;
-    case Inline.UNDERLINE:
-      return <u className={`md-inline-${style.toLowerCase()}`} />;
-    case Inline.HIGHLIGHT:
-      return <span className={`md-inline-${style.toLowerCase()}`} />;
-    case Inline.CODE:
-      return <code className={`md-inline-${style.toLowerCase()}`} />;
     default:
       return null;
   }
