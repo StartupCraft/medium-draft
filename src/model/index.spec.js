@@ -7,7 +7,7 @@ import {
   resetBlockWithType,
   updateDataOfBlock,
   addNewBlockAt,
-} from './';
+} from './index';
 import { Block } from '../util/constants';
 
 describe('model/index', () => {
@@ -24,7 +24,7 @@ describe('model/index', () => {
   const block1 = {
     key: '2vr7c',
     text: 'medium-draft',
-    type: 'atomic:activity',
+    type: 'activity',
     depth: 0,
     inlineStyleRanges: [],
     entityRanges: [],
@@ -33,7 +33,7 @@ describe('model/index', () => {
   const block2 = {
     key: 'fksil',
     text: 'This page is fully editable.',
-    type: 'atomic:activity',
+    type: 'activity',
     depth: 0,
     inlineStyleRanges: [],
     entityRanges: [],
@@ -91,7 +91,7 @@ describe('model/index', () => {
         es3.getCurrentContent().getBlockMap().get(currentBlock.getKey()).toJS());
       expect(currentBlock.getData().toJS()).to.deep.equal({});
 
-      const es4 = addNewBlockAt(es3, currentBlock.getKey(), Block.ACTIVITY, {
+      const es4 = addNewBlockAt(es3, currentBlock.getKey(), false, Block.ACTIVITY, {
         kind: 'memo',
       });
       currentBlock = getCurrentBlock(es4);

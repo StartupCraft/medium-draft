@@ -480,15 +480,31 @@ class App extends React.Component {
   }
 
   handleReturn(e) {
+    const { editorState } = this.state
+    const currentBlock = getCurrentBlock(editorState)
+    const selection = editorState.getSelection()
+
+    if (selection.getAnchorOffset() === 0 && selection.getFocusOffset() === 0) {
+      this.setState({
+        editorState: addNewBlockAt(editorState, currentBlock.getKey(), true)
+      })
+    } else {
+
+      this.setState({
+        editorState: addNewBlockAt(editorState, currentBlock.getKey(), false)
+      })
+    }
+
+    return HANDLED
     // const currentBlock = getCurrentBlock(this.state.editorState);
     // var text = currentBlock.getText();
-    return NOT_HANDLED;
+    // return NOT_HANDLED;
   }
 
   render() {
     const { editorState, editorEnabled } = this.state;
     return (
-      <div>
+      <div style={{padding: "15px 30px 15px 94px"}}>
         <div className="editor-action">
           <button onClick={this.logData}>Log State</button>
           <button onClick={this.renderHTML}>Render HTML</button>

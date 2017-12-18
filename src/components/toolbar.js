@@ -96,12 +96,12 @@ export default class Toolbar extends React.Component {
     * Main logic for setting the toolbar position.
     */
     toolbarNode.style.top =
-      `${((selectionBoundary.top - parentBoundary.top - toolbarBoundary.height) + 10)}px`;
+      `${((selectionBoundary.top - parentBoundary.top - toolbarBoundary.height) - 5)}px`;
     toolbarNode.style.width = `${toolbarBoundary.width}px`;
     const widthDiff = selectionBoundary.width - toolbarBoundary.width;
 
     const left = (selectionBoundary.left - parentBoundary.left);
-    toolbarNode.style.left = `${left + 94 + (widthDiff / 2)}px`;
+    toolbarNode.style.left = `${left + (widthDiff / 2)}px`;
   }
 
   onKeyDown(e) {

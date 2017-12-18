@@ -34,6 +34,16 @@ export const blockToHTML = (block) => {
         return <p className={`guided-block-${blockType.toLowerCase()}`}><br /></p>;
       }
       return <p className={`guided-block-${blockType.toLowerCase()}`} />;
+    case Block.ACTIVITY:
+      return {
+        start: `<div className="guided-block-${blockType.toLowerCase()}">`,
+        end: '</div>',
+      };
+    case Block.OPINION:
+      return {
+        start: `<div className="guided-block-${blockType.toLowerCase()}">`,
+        end: '</div>',
+      };
     default: return null;
   }
 };

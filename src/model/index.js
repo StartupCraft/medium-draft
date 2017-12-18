@@ -143,6 +143,7 @@ by [sstur](https://github.com/sstur)
 export const addNewBlockAt = (
     editorState,
     pivotBlockKey,
+    isBefore = false,
     newBlockType = Block.UNSTYLED,
     initialData = {},
     newKey = null,
@@ -166,8 +167,12 @@ export const addNewBlockAt = (
     data: Map(getDefaultBlockData(newBlockType, initialData)),
   });
 
+  const newBlocks = isBefore
+    ? [[newBlockKey, newBlock], [pivotBlockKey, block]]
+    : [[pivotBlockKey, block], [newBlockKey, newBlock]];
+
   const newBlockMap = blocksBefore.concat(
-    [[pivotBlockKey, block], [newBlockKey, newBlock]],
+    newBlocks,
     blocksAfter
   ).toOrderedMap();
 

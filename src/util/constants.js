@@ -9,7 +9,8 @@ export const Block = {
   OL: 'ordered-list-item',
   UL: 'unordered-list-item',
   ATOMIC: 'atomic',
-  ACTIVITY: 'atomic:activity',
+  ACTIVITY: 'activity',
+  OPINION: 'opinion',
 };
 
 export const Inline = {
